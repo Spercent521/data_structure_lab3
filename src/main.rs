@@ -157,11 +157,10 @@ fn main() {
         show_top_n(&asc, &result_of_linear);
         let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&asc, &test_case_for_search);
         show_top_n(&asc, &result_of_binary);
-        // let result_of_bst:Vec<i32> = sort_method::bst::find_top_n_bst(&asc, n_top);
-        // show_top_n(result_of_bst);
-        // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&asc, n_top);
-        // show_top_n(result_of_avl);
-        
+        let result_of_bst:Vec<usize> = sort_method::bst::search_n_bst(&asc, &test_case_for_search);
+        show_top_n(&asc, &result_of_bst);
+        let result_of_avl:Vec<usize> = sort_method::avl::search_n_avl(&asc, &test_case_for_search);
+        show_top_n(&asc, &result_of_avl);
 
         // part::搜索::逆向序列
         println!("{}", "= 逆向序列 =".yellow());
@@ -170,8 +169,10 @@ fn main() {
         show_top_n(&desc, &result_of_linear);
         let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_binary);
-        // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&desc, n_top); 
-        // show_top_n(result_of_avl);
+        let result_of_bst:Vec<usize> = sort_method::bst::search_n_bst(&desc, &test_case_for_search);
+        show_top_n(&desc, &result_of_bst);
+        let result_of_avl:Vec<usize> = sort_method::avl::search_n_avl(&desc, &test_case_for_search);
+        show_top_n(&desc, &result_of_avl);
         
         // part::搜索::随机序列
         println!("{}", "= 随机序列 =".yellow());
@@ -180,9 +181,12 @@ fn main() {
         show_top_n(&rand, &result_of_linear);
         let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_binary);
-        // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&rand, n_top);
-        // show_top_n(result_of_avl);
+        let result_of_bst:Vec<usize> = sort_method::bst::search_n_bst(&rand, &test_case_for_search);
+        show_top_n(&rand, &result_of_bst);
+        let result_of_avl:Vec<usize> = sort_method::avl::search_n_avl(&rand, &test_case_for_search);
+        show_top_n(&rand, &result_of_avl);
 
+        // 4. #################################################################
         println!("{}", format!("==== Test case {} done. ====", test_case).magenta().bold());
     }
 }
