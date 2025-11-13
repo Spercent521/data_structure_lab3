@@ -1,4 +1,5 @@
 use std::time::Instant;
+use colored::Colorize;
 
 pub fn check_increase(sequence: &[i32]) -> bool {
     for i in 1..sequence.len() {
@@ -11,7 +12,7 @@ pub fn check_increase(sequence: &[i32]) -> bool {
 
 /// 对一个序列查找多个目标元素，返回其索引 binary
 pub fn search_n_binary(sequence: &[i32], test_case_for_search: &[i32]) -> Vec<usize> {
-    println!("使用折半搜索(binary search) 查找多个目标元素... =");
+    println!("{}", "使用折半搜索(binary search) 查找多个目标元素...".bright_black());
 
     // 跳过非递增序列
     if !check_increase(sequence) {

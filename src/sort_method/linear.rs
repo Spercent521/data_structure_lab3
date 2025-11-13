@@ -1,8 +1,9 @@
 use std::time::Instant;
+use colored::Colorize;
 
 /// 对一个序列查找多个目标元素，返回其索引
 pub fn search_n_linear(sequence: &[i32], test_case_for_search: &[i32]) -> Vec<usize> {
-    println!("使用顺序搜索(linear search) 查找多个目标元素...");
+    println!("{}", "使用顺序搜索(linear search) 查找多个目标元素...".bright_black());
     let start = Instant::now();
 
     let mut result = Vec::new();

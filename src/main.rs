@@ -150,7 +150,7 @@ fn main() {
 
         // 3. #################################################################
 
-        // part::搜索::正向排序
+        // part::搜索::正向序列
         println!("{}", "= 正向序列 =".yellow());
         let result_of_linear: Vec<usize> =
             sort_method::linear::search_n_linear(&asc, &test_case_for_search);
@@ -163,22 +163,22 @@ fn main() {
         // show_top_n(result_of_avl);
         
 
-        // part::搜索::逆向排序
+        // part::搜索::逆向序列
         println!("{}", "= 逆向序列 =".yellow());
         let result_of_linear:Vec<usize> = 
             sort_method::linear::search_n_linear(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_linear);
-        let result_of_binary:Vec<usize> = sort_method::bst::search_n_bst(&desc, &test_case_for_search);
+        let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_binary);
         // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&desc, n_top); 
         // show_top_n(result_of_avl);
         
-        // part::搜索::随机排序
+        // part::搜索::随机序列
         println!("{}", "= 随机序列 =".yellow());
         let result_of_linear:Vec<usize> = 
             sort_method::linear::search_n_linear(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_linear);
-        let result_of_binary:Vec<usize> = sort_method::bst::search_n_bst(&rand, &test_case_for_search);
+        let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_binary);
         // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&rand, n_top);
         // show_top_n(result_of_avl);
