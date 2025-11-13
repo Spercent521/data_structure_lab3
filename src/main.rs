@@ -155,8 +155,8 @@ fn main() {
         let result_of_linear: Vec<usize> =
             sort_method::linear::search_n_linear(&asc, &test_case_for_search);
         show_top_n(&asc, &result_of_linear);
-        // let result_of_binary:Vec<i32> = sort_method::binary::find_top_n_binary(&asc, n_top);
-        // show_top_n(result_of_binary);
+        let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&asc, &test_case_for_search);
+        show_top_n(&asc, &result_of_binary);
         // let result_of_bst:Vec<i32> = sort_method::bst::find_top_n_bst(&asc, n_top);
         // show_top_n(result_of_bst);
         // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&asc, n_top);
@@ -168,8 +168,8 @@ fn main() {
         let result_of_linear:Vec<usize> = 
             sort_method::linear::search_n_linear(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_linear);
-        // let result_of_bst:Vec<i32> = sort_method::bst::find_top_n_bst(&desc, n_top);
-        // show_top_n(result_of_bst);
+        let result_of_binary:Vec<usize> = sort_method::bst::search_n_bst(&desc, &test_case_for_search);
+        show_top_n(&desc, &result_of_binary);
         // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&desc, n_top); 
         // show_top_n(result_of_avl);
         
@@ -178,8 +178,8 @@ fn main() {
         let result_of_linear:Vec<usize> = 
             sort_method::linear::search_n_linear(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_linear);
-        // let result_of_bst:Vec<i32> = sort_method::bst::find_top_n_bst(&rand, n_top);
-        // show_top_n(result_of_bst);
+        let result_of_binary:Vec<usize> = sort_method::bst::search_n_bst(&rand, &test_case_for_search);
+        show_top_n(&rand, &result_of_binary);
         // let result_of_avl:Vec<i32> = sort_method::avl::find_top_n_avl(&rand, n_top);
         // show_top_n(result_of_avl);
 
