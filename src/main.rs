@@ -88,16 +88,16 @@ fn generate_search_targets(sequence: &[i32], n_top_num: usize) -> Vec<i32> {
 
 fn main() {
     let tests: &[usize] = &[
+        // 200000,          // [Caution]栈溢出
+        // 100000,          // [Caution]栈溢出
+        // 50000,
+        // 30000,
+        // 20000,
+        // 10000,
+        // 5000,
+        // 2000,
+        1000,
         500, 
-        1000, 
-        // 2000, 
-        // 5000, 
-        // 10000, 
-        // 20000, 
-        // 30000, 
-        // 50000, 
-        // 100000, 
-        // 200000,
     ];
 
     for &test_case in tests {
@@ -155,11 +155,14 @@ fn main() {
         let result_of_linear: Vec<usize> =
             sort_method::linear::search_n_linear(&asc, &test_case_for_search);
         show_top_n(&asc, &result_of_linear);
-        let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&asc, &test_case_for_search);
+        let result_of_binary:Vec<usize> = 
+            sort_method::binary::search_n_binary(&asc, &test_case_for_search);
         show_top_n(&asc, &result_of_binary);
-        let result_of_bst:Vec<usize> = sort_method::bst::search_n_bst(&asc, &test_case_for_search);
+        let result_of_bst:Vec<usize> = 
+            sort_method::bst::search_n_bst(&asc, &test_case_for_search);
         show_top_n(&asc, &result_of_bst);
-        let result_of_avl:Vec<usize> = sort_method::avl::search_n_avl(&asc, &test_case_for_search);
+        let result_of_avl:Vec<usize> = 
+            sort_method::avl::search_n_avl(&asc, &test_case_for_search);
         show_top_n(&asc, &result_of_avl);
 
         // part::搜索::逆向序列
@@ -167,11 +170,14 @@ fn main() {
         let result_of_linear:Vec<usize> = 
             sort_method::linear::search_n_linear(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_linear);
-        let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&desc, &test_case_for_search);
+        let result_of_binary:Vec<usize> = 
+            sort_method::binary::search_n_binary(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_binary);
-        let result_of_bst:Vec<usize> = sort_method::bst::search_n_bst(&desc, &test_case_for_search);
+        let result_of_bst:Vec<usize> = 
+            sort_method::bst::search_n_bst(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_bst);
-        let result_of_avl:Vec<usize> = sort_method::avl::search_n_avl(&desc, &test_case_for_search);
+        let result_of_avl:Vec<usize> = 
+            sort_method::avl::search_n_avl(&desc, &test_case_for_search);
         show_top_n(&desc, &result_of_avl);
         
         // part::搜索::随机序列
@@ -179,11 +185,14 @@ fn main() {
         let result_of_linear:Vec<usize> = 
             sort_method::linear::search_n_linear(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_linear);
-        let result_of_binary:Vec<usize> = sort_method::binary::search_n_binary(&rand, &test_case_for_search);
+        let result_of_binary:Vec<usize> = 
+            sort_method::binary::search_n_binary(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_binary);
-        let result_of_bst:Vec<usize> = sort_method::bst::search_n_bst(&rand, &test_case_for_search);
+        let result_of_bst:Vec<usize> = 
+            sort_method::bst::search_n_bst(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_bst);
-        let result_of_avl:Vec<usize> = sort_method::avl::search_n_avl(&rand, &test_case_for_search);
+        let result_of_avl:Vec<usize> = 
+            sort_method::avl::search_n_avl(&rand, &test_case_for_search);
         show_top_n(&rand, &result_of_avl);
 
         // 4. #################################################################

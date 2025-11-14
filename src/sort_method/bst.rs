@@ -82,6 +82,28 @@ impl BST {
     }
 }
 
+/// 从序列构建平衡二叉排序树
+#[allow(dead_code)]
+pub fn build_balanced_bst(sequence: &[i32]) -> BST {
+    fn build_rec(sequence: &[(i32, i32)]) -> Option<Box<TreeNode>> {
+        if sequence.is_empty() {
+            return None;
+        }
+        let mid = sequence.len() / 2;
+        let (val, origin_pos) = sequence[mid];
+        let mut node = Box::new(TreeNode::new(val, origin_pos));    // 不断地找中点 再递归构建
+        node.left = build_rec(&sequence[..mid]);
+        node.right = build_rec(&sequence[mid + 1..]);
+        Some(node)
+    }
+
+    let mut indexed_sequence: Vec<(i32, i32)> = sequence.iter().cloned().enumerate().map(|(i, v)| (v, i as i32)).collect();
+    indexed_sequence.sort_by_key(|&(v, _)| v); // 先排序以构建平衡树
+
+    let root = build_rec(&indexed_sequence);
+    BST { root }
+}
+
 /// 从序列构建一个二叉排序树
 pub fn build_bst(sequence: &[i32]) -> BST {
     // 按理说从序列中构建BST应该先排序再插入 以保证树的平衡 但这里我们直接插入原始序列以符合题意
@@ -101,6 +123,7 @@ pub fn search_n_bst(sequence: &[i32], test_case_for_search: &[i32]) -> Vec<usize
     let mut result = Vec::new();
 
     let bst = build_bst(sequence);
+    // let bst = build_balanced_bst(sequence);
 
     let start = Instant::now();
 
@@ -112,9 +135,6 @@ pub fn search_n_bst(sequence: &[i32], test_case_for_search: &[i32]) -> Vec<usize
 
     let duration = start.elapsed();
     println!("耗时: {:?}", duration);
-
-    // 避免没有使用变量而警告
-    let _ = (sequence, test_case_for_search, &result);
 
     result
 }
